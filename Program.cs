@@ -12,12 +12,13 @@ namespace FindJSFiles
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("*****This application will look for the specified file in the provided path's folder and subfolders******");
             List<string> results;
-            string prefix = null;
+            string prefix;
             string file;
             string ext;
 
             do
             {
+                prefix = null;
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("\n");
                 Console.Write("\nEnter the folder path: ");
@@ -35,8 +36,7 @@ namespace FindJSFiles
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.Write("Please enter the prefix without the final dot: ");
                     Console.ForegroundColor = ConsoleColor.White;
-                    prefix = Console.ReadLine();
-                    prefix = prefix.ToLower() + ".";
+                    prefix = Console.ReadLine().ToLower() + ".";
                 } else
                 {
                     Console.WriteLine();
@@ -45,8 +45,7 @@ namespace FindJSFiles
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.Write("Enter the file name, without the extension, to find (use of wildcards permitted (?, *)): ");
                 Console.ForegroundColor = ConsoleColor.White;
-                file = Console.ReadLine();
-                file = file.ToLower();
+                file = Console.ReadLine().ToLower();
                 Console.WriteLine();
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.Write("Please enter the extension type of the files to search for, without the dot: ");
@@ -68,6 +67,7 @@ namespace FindJSFiles
                 if (files.Count() == 0)
                 {
                     Console.WriteLine("No matching files.");
+                
                 }
                 else if (files.Count() > 1)
                 {
