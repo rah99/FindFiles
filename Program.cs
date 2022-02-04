@@ -18,7 +18,7 @@ namespace FindJSFiles
 
             do
             {
-                prefix = null;
+                prefix = string.Empty;
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("\n");
                 Console.Write("\nEnter the folder path: ");
